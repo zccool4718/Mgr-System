@@ -238,11 +238,27 @@ table.display tr.even.gradeU {
 
 
 tr.odd {
-	background-color: #E2E4FF;
+	background: #fefefe url(layout/td_bg2.gif) repeat-x;
+	border: solid #cccccc;
+	border-width: 1px 1px 1px 1px;
+}
+
+td.odd{
+	border: solid #cccccc;
+	border-width: 1px 1px 1px 1px;
+    
 }
 
 tr.even {
 	background-color: white;
+	border: solid #cccccc;
+	border-width: 1px 1px 1px 1px;
+}
+
+tr.odd{
+	border: solid #cccccc;
+	border-width: 1px 1px 1px 1px;
+    
 }
 
 
@@ -252,6 +268,7 @@ tr.even {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Misc
  */
+ 
 .dataTables_scroll {
 	clear: both;
 }
