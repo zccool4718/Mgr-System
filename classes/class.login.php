@@ -11,7 +11,7 @@ include_once("class.database.php");
  
  class login{
 	private $db;
-    
+
     public function __construct($tmp_info_db, $server_tmp = "localhost"){
         if(is_array($tmp_info_db)){
             $this->db = new database($tmp_info_db, $server_tmp);            
@@ -21,5 +21,5 @@ include_once("class.database.php");
     }
     
  }
-
+ 
 ?>
