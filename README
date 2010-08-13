@@ -1,39 +1,27 @@
 README File for MGR-SYSTEM
 
 ** Todo List **
-  
-  Do not set the password in any form into the session, please remove
-  Check to see if the use has an active account
-  You are not updating the "last login" time stamp use set lastLogin = now()
-  You are not updating the access log table
-  
-  we need to make a page table, this is simple, we will have 2 things in it, (also for page counters) pageID, filename, counter
-  pageID is autoint, filename is the file that just got requested. (IE index.php), and counter = counter + 1
-  this gives a counter for each page.
-  to do this, first check to see if a entry is in there for the file name, if not then enter one, if so update the counter
-  
-  this should be a public function, as it will be called everytime we call the class.
-  
-  for userlevel, dont return it in the session, make a public class to get it based on current logged in user, and have it as a return value.
-  
-  also I we will be using this class with ajax, I'm thinking with parts of the user level system, so study up on ajax. I can really help on this one if you need help.
-  
-  
-  I have a good database class build its under the classes directory, I would like to use it. (if I was to recode it there will be nothing I would redo in it I will keep it the same)
-  
-  
-  I really want to add "active user" table were we record who is active in the table, we will update it with every page and database should
-  look like,   userID, IP, pageID, timeStamp
-  
-  everytime that user does something we update there entry.
-  
-  When they logout we delete there entry. (before you ask, why if they don't logout but just close the bowser), for we will have a heartbeat
-  system that I will build using ajax, that will do the deleting of that table, if heartbeat stops delete entry and logout user.
-  heartbeat stops if user leaves the website.
-  
-  We also need a registor page build, I can do this, but you need to build that funtions into the login class, we should not
-  have 2 functions for this, (like most stupid sites have), one page is good enought, because right after they login we need to
-  send them though the login process.
-  
-  we need to add a "access level" or "user level" to the system, because we will have pages that lower members can not access
-  
+
+
+-- General
+1: database class is build, need to change all class over to use it.
+
+-- Classes to build
+1: Need to build a config class, that all it does is read a config file and includes those into the system
+2: We ened to build a template system, (page class), this will build the page it self, we just call the functions
+3: need to build a heartbeat system, pingback.. to auto logoff people who just leaves or closes there browser.
+
+-- login class
+1: do return or set the password in any way, passwords only need to be received.
+2: add a check to see if the user has a active account
+3: update the lastLogin timestamp  -- UPDATE user SET lastLogin = now() WHERE userID = $userID
+4: add entry into the accessLog table
+5: need to add function for registration - yes we are putting this in the login class because right after they registor they need to be loged in.
+6: need to add a function to return users accessLevel, must be public function
+
+-- Database Changes
+1: we need to add a page table, where we will list our all pages. We will keep track of this be auto entering the pagename (index.php), and have a pageID (autoint), and counter (int)
+2: we need to add accessLevel to the usersTable
+3: we need a userActive table, so we can keep track who is logged in or not.
+
+   
