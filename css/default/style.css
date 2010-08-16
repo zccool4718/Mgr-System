@@ -1,0 +1,60 @@
+@import "fonts.css";
+@import "menu.css";
+
+body{
+    padding:            0px;
+    margin:             0px;
+    height:             100%;
+}
+html{
+    height:             100%;
+    
+}
+.mainTable{
+    height:             100%;
+    width:              100%;
+    padding:	        0px;
+    margin: 	        0px;
+    border:             0px;
+    border-collapse:    collapse;  
+}
+
+.right{
+    text-align:         right;
+    padding-right:      10px;
+}
+
+.left{
+    text-align:         left;
+    padding-left:       10px;
+}
+
+.center{
+    text-align:         center;
+}
+
+.mainTable thead th{
+    height:             15px;
+    border-bottom:      1px solid #000000;
+    border-color:       #000000;
+    background-color:   #C5C3C7;
+}
+
+.mainTable tbody{
+    height:             auto;
+    vertical-align:     top;
+}
+
+.mainTable tbody td{
+    padding-top:        10px;
+}
+
+.mainTable tfoot{
+    border-top:         1px solid #000000;
+    height:             25px;
+}
+
+.mainTable tfoot td{
+    padding-top:        5px;
+    padding-bottom:     5px;
+}
