@@ -24,4 +24,5 @@ README File for MGR-SYSTEM
 2: we need to add accessLevel to the usersTable
 3: we need a userActive table, so we can keep track who is logged in or not.
 
-   
+-- Default Jquery UI Theme
+1: Default theme needs a complete redo, or find a good looking theme we can use that looks half way ok.

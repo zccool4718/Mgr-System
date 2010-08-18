@@ -20,12 +20,14 @@ timer();
     
     <style>
         @import "css/default/style.css";
-        @import "css/cupertino/jquery-ui-1.8.2.custom.css";
+        @import "css/cupertino/jquery-ui-1.8.4.custom.css";
+        
+        
     </style>
     
     <!-- jquery + jquery UI includes -->
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
     
 
     <!-- jquery + jquery UI includes Plugins-->
@@ -37,13 +39,22 @@ timer();
             $("#dialog").dialog("destroy");
             
             $('#login').live('click', function(){
+                $("#dialog").css('visibility', 'visible');
 		$('#dialog').dialog('open');
                 
                 $("#dialog").dialog({
-                    height: 200,
+		    autoOpen: false,
+                    height: 250,
                     width: 300,
-                    modal: true
-
+                    modal: true,
+                    buttons: {
+                        'Login': function() {
+			    $(this).dialog('close');
+                        },
+                        Cancel: function() {
+                            $(this).dialog('close');
+                        }
+                    }
                 });
             });
             
@@ -78,12 +89,22 @@ timer();
         <tbody>
             <td colspan="2" class="mainBody font14"> This is body
             
-            <?
-            
-            ?>
                 <div id="dialog" name="dialog" class="dialog" title="Login">
-                        Testing
-                        
+                    <div class="loginTxt font10">
+                    Username must be 5-12 Characters, Password must be at least 8 Characters, 1 upper 1 number. <br/><br/>
+                    </div>
+                    <form method="post" action="">
+                        <div>
+                            <label for="username">Username:</label>
+                            <input type="text" name="username"  />
+                        </div>
+                        <div>
+                            <label for="body">Password:</label>
+                            <input type="password" name="password" />
+                        </div>
+                        <input type="hidden" name="token" value="<?=$token;?>" />
+                        <input type="submit" name="login" value="Login"/>
+                    </form>
                 </div>
             </td>
         </tbody>
