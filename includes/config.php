@@ -10,7 +10,7 @@ session_start();
 function getDBinfo(){
     $db["host"]= "localhost";
     $db["user"]= "root";
-    $db["pass"] = "Timkelly1";
+    $db["pass"] = " ";
     $db["db"]   = "mgrsys";
     return $db;
 }
